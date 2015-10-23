@@ -1,0 +1,36 @@
+<h1>Cars Demo App with Routes</h1>
+<h2>Number of cars: {{cars.length}}</h2>
+<!--<input type="search" ng-model="carfilter" placeholder="Filter cars">-->
+<div>
+    <div class="col-md-9">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Year</td>
+                    <td>Registered</td>
+                    <td>Make</td>
+                    <td>Model</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr  ng-repeat="car in cars">
+                    <td>{{car.id}}</td>
+                    <td>{{car.year}}</td>
+                    <td>{{car.registered| date }}</td>
+                    <td>{{car.make}}</td>
+                    <td>{{car.model}}</td>
+                    <td>{{car.description}}</td>
+                    <td>{{car.price| currency}}</td>
+                    <td>
+                        <a href="#/AddCar" ng-click="editCar(car.id)">edit</a> |
+                        <a href="#/AllCars" ng-click="deleteCar(car.id)">delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
